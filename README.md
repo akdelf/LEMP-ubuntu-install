@@ -10,8 +10,7 @@ Quick Start LEMP Server/Vagrant
 * Install composer
 * Install vim
 
-Apache no
-Mysql no
+Apache no / Mysql no
  
 
 
