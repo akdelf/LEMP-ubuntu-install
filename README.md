@@ -1,4 +1,4 @@
-Quick Start LEMP - universal config 
+Quick Start LEMP
 ===============
 
 ## Ubuntu 14.04.3 LTS (native server, vagrant, docker):
