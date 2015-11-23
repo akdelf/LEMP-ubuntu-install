@@ -12,16 +12,17 @@ apt-get -y upgrade
 echo -e "install nginx ...\n"
 apt-get install -y nginx
 
-#PHP-FPM
+# PHP-FPM
 
 echo -e "install php5-fpm ...\n"
 apt-get install -y php5-fpm
 
-echo -e "Configure PHP Processor ...\n"
+echo -e "Configure php5-fpm ..\n"
 sed -i s/\;cgi\.fix_pathinfo\s*\=\s*1/cgi.fix_pathinfo\=0/ /etc/php5/fpm/php.ini
-
-echo -e "listen port 9000 in php5-fpm ...\n"
 sed -i "s/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g" /etc/php5/fpm/pool.d/www.conf
+sed -i "s/^;listen.owner = www-data/listen.owner = www-data/" /etc/php5/fpm/pool.d/www.conf
+sed -i "s/^;listen.group = www-data/listen.group = www-data/" /etc/php5/fpm/pool.d/www.conf
+sed -i "s/^;listen.mode = 0660/listen.mode = 0660/" /etc/php5/fpm/pool.d/www.conf
 
 
 # INSTALL PERCONA
@@ -67,3 +68,9 @@ mv composer.phar /usr/local/bin/composer
 
 echo -e "install vim ...\n"
 apt-get install -y vim
+
+#START
+echo -e "start system ...\n"
+service nginx start
+service mysql start
+service php5-fpm start
