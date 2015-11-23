@@ -52,6 +52,12 @@ apt-get install -y php5-cli
 echo -e "cURL is a library for getting files from FTP, GOPHER, HTTP server"
 apt-get install -y php5-curl
 
+echo -e "install GD ...\n"
+apt-get install -y php5-gd
+
+echo -e "install imagemagick ...\n"
+apt-get install -y imagemagick
+apt-get install -y php5-imagick
 
 echo -e "open php short_tags... \n"
 sed -i "s/short_open_tag = Off/short_open_tag = On/g" /etc/php5/fpm/php.ini 
