@@ -35,7 +35,7 @@ echo "deb-src http://repo.percona.com/apt `lsb_release -cs` main" >> /etc/apt/so
 apt-get update
 
 echo -e "install percona client-server...\n"
-apt-get install percona-server-server-5.6 percona-server-client-5.6
+apt-get install percona-server-server
 
 echo -e "add root password  - Password1...\n"
 mysqladmin -u root password Password1
@@ -65,3 +65,6 @@ apt-get install -y git
 echo -e "composer install... \n"
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+
+echo -e "install git ...\n"
+apt-get install -y vim
