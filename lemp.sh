@@ -7,7 +7,6 @@ apt-get update
 apt-get -y upgrade
 
 
-
 # NGINX
 
 echo -e "install nginx ...\n"
@@ -66,5 +65,5 @@ echo -e "composer install... \n"
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
-echo -e "install git ...\n"
+echo -e "install vim ...\n"
 apt-get install -y vim
