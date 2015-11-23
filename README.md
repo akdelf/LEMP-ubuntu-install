@@ -1,4 +1,4 @@
-Quick Start LEMP
+Quick Start LEMP stack
 ===============
 
 ## Ubuntu 14.04.3 LTS (native server, vagrant, docker):
