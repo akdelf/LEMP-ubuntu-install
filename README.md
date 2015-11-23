@@ -11,7 +11,7 @@ Quick Start LEMP Server/Vagrant
  
 Apache no / Mysql no
 
-# Bonus track:
+#### Bonus track:
 * Install vim
 
 
