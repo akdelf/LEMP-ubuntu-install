@@ -5,12 +5,16 @@ Quick Start LEMP Server/Vagrant
 
 * Install nginx
 * Install php-fpm5
-* Install percona
+* Install percona (clone MySql)
 * Install git
 * Install composer
+ 
+Apache no / Mysql no
+
+# Bonus track:
 * Install vim
 
-Apache no / Mysql no
+
  
 
 
