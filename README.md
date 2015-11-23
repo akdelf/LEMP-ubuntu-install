@@ -1,7 +1,7 @@
-Quick Start LEMP Server/Vagrant 
+Quick Start LEMP 
 ===============
 
-## Ubuntu 14.04.3 LTS:
+## Ubuntu 14.04.3 LTS (native server / vagrant / docker):
 
 * Install nginx
 * Install php-fpm5
