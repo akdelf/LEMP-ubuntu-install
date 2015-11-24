@@ -19,10 +19,10 @@ apt-get install -y php5-fpm
 
 echo -e "Configure php5-fpm ..\n"
 sed -i s/\;cgi\.fix_pathinfo\s*\=\s*1/cgi.fix_pathinfo\=0/ /etc/php5/fpm/php.ini
-sed -i "s/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g" /etc/php5/fpm/pool.d/www.conf
-sed -i "s/^;listen.owner = www-data/listen.owner = www-data/" /etc/php5/fpm/pool.d/www.conf
-sed -i "s/^;listen.group = www-data/listen.group = www-data/" /etc/php5/fpm/pool.d/www.conf
-sed -i "s/^;listen.mode = 0660/listen.mode = 0660/" /etc/php5/fpm/pool.d/www.conf
+# sed -i "s/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g" /etc/php5/fpm/pool.d/www.conf
+# sed -i "s/^;listen.owner = www-data/listen.owner = www-data/" /etc/php5/fpm/pool.d/www.conf
+# sed -i "s/^;listen.group = www-data/listen.group = www-data/" /etc/php5/fpm/pool.d/www.conf
+# sed -i "s/^;listen.mode = 0660/listen.mode = 0660/" /etc/php5/fpm/pool.d/www.conf
 
 
 # INSTALL PERCONA
@@ -35,10 +35,10 @@ echo "deb-src http://repo.percona.com/apt `lsb_release -cs` main" >> /etc/apt/so
 apt-get update
 
 echo -e "install percona client-server...\n"
-apt-get install percona-server-server
+apt-get install -y percona-server-server
 
 echo -e "add root password  - Password1...\n"
-mysqladmin -u root password Password1
+#mysqladmin -u root password Password1
 
 
 # INSTALL PHP MODULES
