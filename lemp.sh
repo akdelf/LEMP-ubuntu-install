@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo -i
+# sudo -i
 
 echo -e "upgrade system ...\n"
 apt-get update
@@ -24,21 +24,28 @@ sed -i s/\;cgi\.fix_pathinfo\s*\=\s*1/cgi.fix_pathinfo\=0/ /etc/php5/fpm/php.ini
 # sed -i "s/^;listen.group = www-data/listen.group = www-data/" /etc/php5/fpm/pool.d/www.conf
 # sed -i "s/^;listen.mode = 0660/listen.mode = 0660/" /etc/php5/fpm/pool.d/www.conf
 
-
-# INSTALL PERCONA
-
 echo -e "add Percona repo ... \n"
 
-apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
-echo "deb http://repo.percona.com/apt `lsb_release -cs` main" >> /etc/apt/sources.list.d/percona.list
-echo "deb-src http://repo.percona.com/apt `lsb_release -cs` main" >> /etc/apt/sources.list.d/percona.list
-apt-get update
+if [ "$1" == "percona" ]; then
+  
+  # INSTALL PERCONA
+         
+  apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
+  echo "deb http://repo.percona.com/apt `lsb_release -cs` main" >> /etc/apt/sources.list.d/percona.list
+  echo "deb-src http://repo.percona.com/apt `lsb_release -cs` main" >> /etc/apt/sources.list.d/percona.list
+  apt-get update
 
-echo -e "install percona client-server...\n"
-apt-get install -y percona-server-server
+  echo -e "install percona client-server...\n"
+  apt-get install -y percona-server-server
 
-echo -e "add root password  - Password1...\n"
-#mysqladmin -u root password Password1
+  echo -e "add root password  - Password1...\n"
+  #mysqladmin -u root password Password1
+
+else
+ 
+  apt-get install mysql-server-5.6    
+
+fi
 
 
 # INSTALL PHP MODULES
