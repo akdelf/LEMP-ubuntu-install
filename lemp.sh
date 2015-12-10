@@ -43,7 +43,9 @@ if [ "$1" == "percona" ]; then
 
 else
  
-  apt-get install mysql-server-5.6    
+  apt-get install mysql-server
+  mysql_install_db
+  mysql_secure_installation
 
 fi
 
